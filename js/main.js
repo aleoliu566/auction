@@ -228,7 +228,7 @@ function produceSingleItem(sinItemData, itemKey) {
             /*
             從資料庫中抓出message資料，並將資料填入MessageBox
             */
-            firebase.database().ref("items/" + itemKey + "/messages").orderByChild("time").on("value", function(data) {
+            firebase.database().ref("items/" + itemKey + "/messages").on("value", function(data) {
                 messBox.refresh();
                 var messageObjs = data.val();
                 for (var mess in messageObjs) {
